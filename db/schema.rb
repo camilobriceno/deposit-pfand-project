@@ -10,9 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_06_121804) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_06_130511) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bottles", force: :cascade do |t|
+    t.text "offer_description"
+    t.string "bottle_type"
+    t.integer "quantity"
+    t.bigint "user_id", null: false
+    t.bigint "time_availability_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["time_availability_id"], name: "index_bottles_on_time_availability_id"
+    t.index ["user_id"], name: "index_bottles_on_user_id"
+  end
+
+  create_table "time_availabilities", force: :cascade do |t|
+    t.date "start"
+    t.date "end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,4 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_06_121804) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bottles", "time_availabilities"
+  add_foreign_key "bottles", "users"
 end
