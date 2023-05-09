@@ -1,0 +1,7 @@
+<h1>This is our index page.</h1>
+
+<ul>
+  <% @bottles.each do |bottle| %>
+    <li><%= bottle.name %></li>
+  <% end %>
+</ul>
