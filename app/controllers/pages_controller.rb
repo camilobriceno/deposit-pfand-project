@@ -3,4 +3,14 @@ class PagesController < ApplicationController
 
   def home
   end
+
+
+  def index
+    @bottles = Bottle.all
+  end
+
+  def show
+    @bottles = Bottle.find(params[:id])
+  end
+
 end
