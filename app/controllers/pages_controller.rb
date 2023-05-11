@@ -1,17 +1,13 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :deposit]
+  skip_before_action :authenticate_user!, only: %i[home deposit]
 
   def home
-
   end
 
   def zipcode
-
   end
 
-
   def deposit
-
   end
 
   def index
@@ -23,7 +19,5 @@ class PagesController < ApplicationController
   end
 
   def new
-
   end
-
 end
