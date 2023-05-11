@@ -1,7 +1,26 @@
-<div class="container">
-  <h1>Select an option</h1>
+<div class="d-flex justify-content-center">
+  <h1>How do we work?🍾 </h1>
+</div>
 
-  <%= link_to "Discover provider",  new_user_registration_path(:user_type => "provider") , class:"btn btn-primary"%>
+<div class="d-flex justify-content-center">
+  <ol>
+    <li>You tell us how many bottles do you want to give away.</li>
+    <li>You tell us when to pic the bottles up.</li>
+    <li>We connect you if someone who is collecting bottles in your area.</li>
+  </ol>
+</div>
 
-  <%= link_to "Discover collector",  new_user_registration_path(:user_type => "collector") , class:"btn btn-primary"%>
+<div class="d-flex flex-row justify-content-center">
+<%
+=begin%>
+
+
+  <div class="p-2"><%= link_to "Discover provider",  new_user_registration_path(:user_type => "provider") , class:"btn btn-primary"%></div>
+  <div class="p-2">  <%= link_to "Discover collector",  new_user_registration_path(:user_type => "collector") , class:"btn btn-primary"%></div>
+
+<%
+=end%>
+
+
+
 </div>

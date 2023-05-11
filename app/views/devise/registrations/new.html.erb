@@ -1,11 +1,10 @@
 <div class="container">
-<h2>Sign up</h2>
+
 
  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
-<% if params[:user_type] == "provider" %>
-
+  <% if params[:user_type] == "provider" %>
 
 
     <div class="form-inputs">
@@ -33,35 +32,44 @@
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
     </div>
-<% else %>
+  <% else %>
+    <h1>Sign up as a collector</h1>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+          <%= f.input :first_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "first name" }%>
+          <%= f.input :last_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "last name" }%>
+          <%= f.input :zipcode,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "zipcode" }%>
 
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :first_name,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "first name" }%>
-      <%= f.input :last_name,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "last name" }%>
-      <%= f.input :zipcode,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "zipcode" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
-    </div>
+          <%= f.input :provider,
+                      as: :select,
+                      collection: [['No',false],['Yes',true]],
+                      include_blank: false,
+                      disabled: [] %>
 
-<% end %>
+
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+
+
+  <% end %>
 
 
   <div class="form-actions btn btn-primary">
