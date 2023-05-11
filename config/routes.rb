@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   root to: "pages#deposit"
 
   resources :users, only: [:index, :show] do
-    resources :bottles, only: [:index, :show, :new, :create, :destroy]
+    resources :bottles, only: [:new, :create, :index, :show, :destroy]
   end
 
-  get "zipcode", to: "pages#zipcode", as: "zipcode"
+ # get "zipcode", to: "pages#zipcode", as: "zipcode"
+
+  get "bottles/new", to: "bottles#new"
+  post "bottles", to: "bottles#create"
   # get "/index", to: "pages#index"
   # get "bottles/:id", to: "bottles#show"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

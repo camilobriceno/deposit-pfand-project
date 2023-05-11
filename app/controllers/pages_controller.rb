@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def zipcode
-    
+
   end
 
 
@@ -20,6 +20,10 @@ class PagesController < ApplicationController
 
   def show
     @bottles = Bottle.find(params[:id])
+  end
+
+  def new
+
   end
 
 end

@@ -1,1 +1,60 @@
-<h1>Create a form asking questions to provider</h1>
+<div class="d-flex justify-content-center">
+
+<%# <h1>Lets give the collector more infos..</h1>
+</div>
+
+<div class="d-flex row justify-content-center">
+<h5>How many glass bottles do you have?</h5>
+<form action="/contact" method="get">
+  <input type="text" name="member" placeholder="Quantity">
+  <input type="submit">
+</form>
+
+<h5>How many petbottles do you have?</h5>
+<form action="/contact" method="get">
+  <input type="text" name="member" placeholder="Quantity">
+  <input type="submit">
+</form>
+
+<h5>How many cans do you have?</h5>
+<form action="/contact" method="get">
+  <input type="text" name="member" placeholder="Quantity">
+  <input type="submit">
+</form>
+
+<h5>In wich floor do you live?</h5>
+<form action="/contact" method="get">
+  <input type="text" name="member" placeholder="Ex. 1. floor?">
+  <input type="submit">
+</form>
+
+<h5>Can you help carring the bottles to the ground floor?</h5>
+<form action="/contact" method="get">
+  <input type="text" name="member" placeholder="Yes / No?">
+  <input type="submit">
+</form>
+
+<h5>Do you confirm you are only offering refundable bottles?</h5>
+<form action="/contact" method="get">
+  <input type="text" name="member" placeholder="Yes / No?">
+  <input type="submit">
+</form>
+
+</div> %>
+
+
+<%= form_with model: @bottle do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+  <%= f.label :zipcode %>
+  <%= f.number_field :zipcode %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.submit %>
+<% end %>
+
+</div>
+<%# (:user_id, :first_name, :last_name, :zipcode, :password, :email, :provider) %>
