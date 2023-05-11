@@ -1,5 +1,4 @@
 class BottlesController < ApplicationController
-
   def index
     @bottles = Bottle.all
   end
@@ -15,7 +14,7 @@ class BottlesController < ApplicationController
   end
 
   def show
-    @bottles = Bottle.find(params[:user_id/bottles])
+    @bottles = Bottle.find(params[:user_id / bottles])
   end
 end
 
