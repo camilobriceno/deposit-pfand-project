@@ -1,1 +1,14 @@
 // Specific CSS for your home-page
+h1 {
+  color: $light-green;
+  &:hover {
+    color: $dark-green;
+  }
+}
+
+h3 {
+  color: $light-green;
+  &:hover {
+    color: $dark-green;
+  }
+}
