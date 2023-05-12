@@ -4,32 +4,19 @@
     height: 100vh;
     width: 100vw;
     object-fit: cover;
-    position: absolute;
-    top: o;
+    position: flex;
     z-index: -1;
   ">
-</div>
 
-<div class="d-flex justify-content-center">
-  <ol>
-    <li>You tell us how many bottles do you want to give away.</li>
-    <li>You tell us when to pic the bottles up.</li>
-    <li>We connect you if someone who is collecting bottles in your area.</li>
-  </ol>
-</div>
+    <div class="container padding: 0">
+      <div class="banner">
+        <h1>Bottle-me <strong>connecting people</strong> to <strong>help each other</strong>!</h1>
+        <p><span data-controller="typed-js"></span></p>
+        <a class="btn btn-ghost" href="#">Sign up</a>
 
-<div class="d-flex flex-row justify-content-center">
+        <div class="p-2"><%= link_to "Discover provider",  new_user_registration_path(:user_type => "provider") , class:"btn btn-ghost"%></div>
+        <div class="p-2">  <%= link_to "Discover collector",  new_user_registration_path(:user_type => "collector") , class:"btn btn-ghost"%></div>
 
-
-  <div class="p-2"><%= link_to "Discover provider",  new_user_registration_path(:user_type => "provider") , class:"btn btn-primary"%></div>
-  <div class="p-2">  <%= link_to "Discover collector",  new_user_registration_path(:user_type => "collector") , class:"btn btn-primary"%></div>
-
-
-
-  <div class="container">
-    <div class="banner">
-      <h1>Bottle-me <strong>connecting people</strong> to <strong>help each other</strong>!</h1>
-      <p><span data-controller="typed-js"></span></p>
-      <a class="btn btn-ghost" href="#">Sign up</a>
+      </div>
+    </div>
   </div>
-</div>
