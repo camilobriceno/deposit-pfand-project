@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :bottles, only: [:new, :create, :index, :show, :destroy]
   end
 
+  resources :users do
+    resources :bookings
+  end
+
  # get "zipcode", to: "pages#zipcode", as: "zipcode"
 
   get "bottles/new", to: "bottles#new"
