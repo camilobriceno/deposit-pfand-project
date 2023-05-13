@@ -1,6 +1,10 @@
-<h1>Create Collection</h1>
-<%= simple_form_for [@user, @booking] do |f| %>
-<%= f.input :bottle_type, collection: ["Plastic", "Glass", "Cans"] %>
-<%= f.input :quantity, collection: (1..10) %>
-<%= f.submit 'Send'%>
-<% end %>
+<div class="container mt-5">
+    <div class="row">
+      <h1>Create Collection</h1>
+      <%= simple_form_for [@user, @booking] do |f| %>
+        <%= f.input :bottle_type, collection: ["Plastic", "Glass", "Cans"] %>
+        <%= f.input :quantity, collection: (1..10) %>
+        <%= f.submit 'Send'%>
+      <% end %>
+    </div>
+</div>
