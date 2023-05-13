@@ -12,10 +12,11 @@ Rails.application.routes.draw do
 
  # get "zipcode", to: "pages#zipcode", as: "zipcode"
 
-  get "bottles/new", to: "bottles#new" 
-  post "bottles", to: "bottles#create"
-  get "users/:id", to: "users#show"
+   get "bottles/new", to: "bottles#new"
+  # post "bottles", to: "bottles#create"
+  # get "users/:id", to: "users#show"
 
+  # get "bookings/:id", to: "bookings#show"
   # get "/index", to: "pages#index"
   # get "bottles/:id", to: "bottles#show"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

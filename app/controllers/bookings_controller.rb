@@ -13,7 +13,12 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.save
-    redirect_to user_bookings_path(current_user)
+    redirect_to user_booking_path(current_user, @booking)
+  end
+
+  def show
+    @booking = Booking.find(params[:user_id])
+    @user = User.find(params[:user_id])
   end
 
   private
