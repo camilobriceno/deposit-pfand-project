@@ -1,0 +1,8 @@
+<h1>Dashboard</h1>
+<div class="container">
+<% @user.bookings.each do |booking| %>
+<%= booking.quantity %>
+<%= booking.bottle_type %>
+<br>
+<% end %>
+</div>
