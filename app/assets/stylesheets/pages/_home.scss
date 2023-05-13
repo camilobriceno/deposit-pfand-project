@@ -12,3 +12,12 @@ h3 {
     color: $dark-green;
   }
 }
+
+.bg-image{
+  background-image: url('https://images.unsplash.com/photo-1514716406192-98539572a586?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80');
+  height: 100vh;
+    width: 100%;
+  z-index: -1;
+  background-position: center;
+  background-size: cover;
+}
