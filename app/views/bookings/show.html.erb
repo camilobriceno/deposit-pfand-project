@@ -1,8 +1,26 @@
-<h1>Dashboard</h1>
-<div class="container">
-<% @user.bookings.each do |booking| %>
-<%= booking.quantity %>
-<%= booking.bottle_type %>
-<br>
-<% end %>
+<div class="container mt-5">
+    <div class="row">
+
+      <div class="col-6">
+        <h1 class="mt-5">Your balance</h1>
+      </div>
+
+      <div class="col-6">
+        <div class="card-trip">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-trip-infos">
+            <div>
+              <div class="container">
+              <% @user.bookings.each do |booking| %>
+              <%= booking.quantity %>
+              <%= booking.bottle_type %>
+              <br>
+              <% end %>
+            </div>
+            <h2 class="card-trip-pricing">£99.99</h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
+        </div>
+      </div>
+    </div>
 </div>

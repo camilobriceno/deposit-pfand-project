@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.save
+ 
     redirect_to user_booking_path(current_user, @booking)
   end
 
