@@ -1,21 +1,26 @@
-<div class="d-flex justify-content-center">
-  <div class="cards">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-          <div class="card-trip">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-            <div class="card-trip-infos">
-              <div>
-                <div class="container">
-                  <% @user.bookings.each do |booking| %>
-                  <%= booking.quantity %>
-                  <%= booking.bottle_type %>
-                  <br>
-                  <% end %>
+<div class="container">
+  <div class="card-category">
+    <div class="d-flex justify-content-center">
+      <div class="cards">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+              <div class="card-trip">
+                <img src="https://images.unsplash.com/photo-1561414926-7f3f921a2e18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80" />
+                <div class="card-trip-infos">
+                  <div>
+                    <div class="container">
+                      <% @user.bookings.each do |booking| %>
+                      <%= booking.quantity %>
+                      <%= booking.bottle_type %>
+                      <%= booking.price %>
+                      <br>
+                      <% end %>
+                    </div>
+                  <h2 class="card-trip-pricing">£99.99</h2>
+                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
                 </div>
-              <h2 class="card-trip-pricing">£99.99</h2>
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-            </div>
-          </div>
+              </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

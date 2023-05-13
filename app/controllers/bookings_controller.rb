@@ -13,7 +13,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.save
- 
     redirect_to user_booking_path(current_user, @booking)
   end
 
@@ -25,6 +24,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:bottle_type, :quantity)
+    params.require(:booking).permit(:bottle_type, :quantity, :price)
   end
 end
