@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_11_185923) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_13_083918) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,13 +43,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_185923) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.bigint "time_availability_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity"
-    t.string "type"
-    t.index ["time_availability_id"], name: "index_bookings_on_time_availability_id"
+    t.string "bottle_type"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -74,13 +72,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_185923) do
     t.string "last_name"
     t.integer "zipcode"
     t.boolean "provider"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "time_availabilities"
   add_foreign_key "bookings", "users"
   add_foreign_key "time_availabilities", "users", column: "users_id"
 end
